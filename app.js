@@ -23,6 +23,7 @@ const todoApplicationDbServer = async () => {
 };
 
 todoApplicationDbServer();
+module.exports = app;
 
 const hasCategory = (requestQuery) => {
   return requestQuery.category !== undefined;

@@ -1,10 +1,10 @@
-GET http://localhost:3007/todos/?category=LEARNING&priority=HIGH
+GET http://localhost:3007/todos/?status=TO%20DO
 ###
 
 GET http://localhost:3007/todos/1
 ###
 
-GET http://localhost:3007/agenda/?date=2021-12-12
+GET http://localhost:3007/agenda/?date=2021-1-12
 ###
 
 POST http://localhost:3007/todos/

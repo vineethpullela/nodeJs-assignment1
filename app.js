@@ -3,7 +3,7 @@ const app = express();
 const { open } = require("sqlite");
 const sqlite3 = require("sqlite3");
 const path = require("path");
-const format = require("date-fns");
+const { format } = require("date-fns");
 const isValid = require("date-fns/isValid");
 
 app.use(express.json());

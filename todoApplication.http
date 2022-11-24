@@ -1,10 +1,10 @@
-GET http://localhost:3007/todos/?status=TO%20DO
+GET http://localhost:3007/todos/?priority=HIGH&status=IN%20PROGRESS
 ###
 
 GET http://localhost:3007/todos/1
 ###
 
-GET http://localhost:3007/agenda/?date=2021-1-12
+GET http://localhost:3007/agenda/?date=2000-00-00
 ###
 
 POST http://localhost:3007/todos/
@@ -31,7 +31,7 @@ Content-Type: application/json
 PUT http://localhost:3007/todos/2
 Content-Type: application/json
 
-{ "priority": "HIGH" }
+{ "priority": "AVERAGE" }
 
 ###
 PUT http://localhost:3007/todos/2
@@ -45,7 +45,7 @@ Content-Type: application/json
 PUT http://localhost:3007/todos/2
 Content-Type: application/json
 
-{  "category": "LEARNING" }
+{  "category": "LEARNIN" }
 
 ###
 

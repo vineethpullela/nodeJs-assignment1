@@ -302,11 +302,12 @@ app.post("/todos/", async (request, response) => {
   let dateAndPriority = validateDate && validatePriority;
   let statusAndCategory = validateStatus && validatePriority;
   if (dateAndPriority && statusAndCategory) {
+    const formatDate = format(new Date(dueDate), "yyy-MM-dd");
     const postTodoQuery = `
   INSERT INTO
     todo (id, todo,category, priority, status,due_date)
   VALUES
-    (${id}, '${todo}', '${category}','${priority}', '${status}','${dueDate}');`;
+    (${id}, '${todo}', '${category}','${priority}', '${status}','${formatDate}');`;
     await db.run(postTodoQuery);
     response.send("Todo Successfully Added");
   } else {
@@ -314,7 +315,7 @@ app.post("/todos/", async (request, response) => {
       response.status(400);
       response.send("Invalid Due Date");
     }
-    if (!validateCategory) {
+    if (validateCategory === false) {
       response.status(400);
       response.send("Invalid Todo Category");
     }
